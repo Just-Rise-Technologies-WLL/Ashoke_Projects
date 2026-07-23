@@ -23,3 +23,4 @@ This file tracks user requests and activities performed in the workspace.
   - Implemented automatic scroll-to-top behavior inside Vue Router (`router/index.js`) on every page navigation.
   - Redesigned the responsive layout of `StatsSection.vue` to use CSS Grid on tablets (centering the 5th item) and 1 vertical column on mobile screens to prevent cramped text.
   - Created and registered new page views for `PrivacyPolicyView.vue` and `TermsConditionsView.vue` to resolve the non-functional bottom footer links.
+  - Copied `contact.php` to the `/public` directory and updated the frontend submit calls to use relative API endpoints (`/contact.php`) for seamless hosting.

@@ -34,7 +34,7 @@ const submitForm = async () => {
   submitMessage.value = ''
   
   try {
-    const response = await fetch('http://localhost/backend/contact.php', {
+    const response = await fetch('/contact.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
