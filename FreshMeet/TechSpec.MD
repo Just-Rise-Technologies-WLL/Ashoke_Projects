@@ -12,4 +12,9 @@ In footer we needs to have developed by justrise.bh and its linked to our websit
 
 if any privacy policy or terms and condition is needed please add it in the footer and link to it  
 
-set the favico and social share logo and meta tags  for seo
+set the favico and social share logo and meta tags  for seo. use the logo in this folder
+
+dont use image as url. instead use div with background image or svg as background image.
+
+Fresh Cuts Meat
+info@freshcutsmeat.ae
