@@ -52,9 +52,9 @@ import SectionHeader from '@/components/ui/SectionHeader.vue'
               If you have any questions regarding this Privacy Policy, you may contact us using the details below:
             </p>
             <p class="contact-details">
-              <strong>Shajad Ahmad HR Consultancies L.L.C</strong><br>
-              Sharjah, UAE<br>
-              Email: <a href="mailto:info@shajadhrconsultancy.com">info@shajadhrconsultancy.com</a>
+              <strong>Shahjad Ahmad HR Consultancies L.L.C</strong><br>
+              Corporate Office: 204, Heirs Of Mohammed Al Jamea Building, Al Murar, Deira, Dubai, UAE<br>
+              Email: <a href="mailto:info@shahjadhrconsultancy.com">info@shahjadhrconsultancy.com</a>
             </p>
           </div>
         </div>

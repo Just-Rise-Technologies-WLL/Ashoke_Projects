@@ -49,21 +49,29 @@ import { MapPin, Phone, Mail, Facebook, Linkedin, Instagram } from 'lucide-vue-n
           <li>
             <MapPin size="16" class="contact-icon" />
             <div>
+              <strong>Operational Office:</strong><br>
+              108, Heirs of Mohammed Abdulla Al Jamea Building,<br>
+              12th Street, Al Quoz Industrial Area 3, Dubai, UAE
+            </div>
+          </li>
+          <li>
+            <MapPin size="16" class="contact-icon" />
+            <div>
               <strong>Corporate Office:</strong><br>
-              Shajad Ahmad HR Consultancies L.L.C<br>
-              Sharjah, UAE
+              204, Heirs Of Mohammed Al Jamea Building,<br>
+              Al Murar, Deira, Dubai, UAE
             </div>
           </li>
           <li>
             <Phone size="16" class="contact-icon" />
             <div>
-              <a href="tel:+971509390051">+971 509390051</a> | 
-              <a href="tel:+971507648860">+971 507648860</a>
+              <a href="tel:+971589390051">+971 589390051</a> | 
+              <a href="tel:+971567648660">+971 567648660</a>
             </div>
           </li>
           <li>
             <Mail size="16" class="contact-icon" />
-            <a href="mailto:info@shajadhrconsultancy.com">info@shajadhrconsultancy.com</a>
+            <a href="mailto:info@shahjadhrconsultancy.com">info@shahjadhrconsultancy.com</a>
           </li>
         </ul>
       </div>
@@ -71,7 +79,7 @@ import { MapPin, Phone, Mail, Facebook, Linkedin, Instagram } from 'lucide-vue-n
     
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p>&copy; 2026 Shajad Ahmad Human Resources Consultancies L.L.C. All Rights Reserved. Developed by <a href="https://justrise.bh" target="_blank" rel="noopener" class="developer-link">Just Rise Technologies</a>.</p>
+        <p>&copy; 2026 Shahjad Ahmad Human Resources Consultancies L.L.C. All Rights Reserved. Developed by <a href="https://justrise.bh" target="_blank" rel="noopener" class="developer-link">Just Rise Technologies</a>.</p>
         <div class="footer-legal">
           <RouterLink to="/privacy-policy">Privacy Policy</RouterLink> | 
           <RouterLink to="/terms-conditions">Terms & Conditions</RouterLink>
@@ -80,7 +88,7 @@ import { MapPin, Phone, Mail, Facebook, Linkedin, Instagram } from 'lucide-vue-n
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/971509390051" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/971589390051" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 32 32" width="32" height="32" fill="white">
         <path d="M16 2.5C8.5 2.5 2.5 8.5 2.5 16c0 2.4.6 4.7 1.7 6.7l-2.2 8.1 8.3-2.2c2 .1 4.2 .1 5.7 .1 7.5 0 13.5-6 13.5-13.5S23.5 2.5 16 2.5zm0 24.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1-1.7-1.6-3.7-1.6-5.8 0-6.2 5.1-11.3 11.3-11.3s11.3 5.1 11.3 11.3-5.1 11.3-11.3 11.3z"/>
         <path d="M21.9 19.3c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.1-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7 0 1.6 1.2 3.1 1.3 3.3.1.2 2.3 3.5 5.5 4.9.8.3 1.4.5 1.9.6.8.3 1.5.2 2.1.1.6-.1 1.8-.7 2.1-1.5.2-.8.2-1.4.1-1.5-.2-.1-.5-.2-.8-.3z"/>

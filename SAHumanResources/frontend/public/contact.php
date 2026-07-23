@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $recipient = "info@shajadhrconsultancy.com";
+    $recipient = "info@shahjadhrconsultancy.com";
     $subject = "New Contact via Website from $name";
 
     $email_content = "Name: $name\n";

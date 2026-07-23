@@ -82,8 +82,16 @@ const submitForm = async () => {
               <div class="info-card">
                 <div class="icon-wrap"><MapPin size="24" class="info-icon" /></div>
                 <div class="info-content">
+                  <h4>Operational Office</h4>
+                  <p>108, Heirs of Mohammed Abdulla Al Jamea Building,<br/>12th Street, Al Quoz Industrial Area 3, Dubai, UAE</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="icon-wrap"><MapPin size="24" class="info-icon" /></div>
+                <div class="info-content">
                   <h4>Corporate Office</h4>
-                  <p>Shajad Ahmad HR Consultancies L.L.C<br/>Sharjah, UAE</p>
+                  <p>204, Heirs Of Mohammed Al Jamea Building,<br/>Al Murar, Deira, Dubai, UAE</p>
                 </div>
               </div>
               
@@ -91,8 +99,8 @@ const submitForm = async () => {
                 <div class="icon-wrap"><Phone size="24" class="info-icon" /></div>
                 <div class="info-content">
                   <h4>Call Us At</h4>
-                  <p><a href="tel:+971509390051">+971 50 939 0051</a><br/>
-                     <a href="tel:+971507648860">+971 50 764 8860</a></p>
+                  <p><a href="tel:+971589390051">+971 58 939 0051</a><br/>
+                     <a href="tel:+971567648660">+971 56 764 8660</a></p>
                 </div>
               </div>
               
@@ -100,7 +108,7 @@ const submitForm = async () => {
                 <div class="icon-wrap"><Mail size="24" class="info-icon" /></div>
                 <div class="info-content">
                   <h4>Email Us</h4>
-                  <p><a href="mailto:info@shajadhrconsultancy.com">info@shajadhrconsultancy.com</a></p>
+                  <p><a href="mailto:info@shahjadhrconsultancy.com">info@shahjadhrconsultancy.com</a></p>
                 </div>
               </div>
             </div>

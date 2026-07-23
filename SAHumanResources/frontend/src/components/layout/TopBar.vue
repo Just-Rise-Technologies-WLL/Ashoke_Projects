@@ -6,17 +6,17 @@ import { Phone, Mail, Facebook, Linkedin, Instagram } from 'lucide-vue-next'
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-contact">
-        <a href="tel:+971509390051" class="contact-item">
+        <a href="tel:+971589390051" class="contact-item">
           <Phone size="14" />
-          <span>+971 509390051</span>
+          <span>+971 589390051</span>
         </a>
-        <a href="tel:+971507648860" class="contact-item">
+        <a href="tel:+971567648660" class="contact-item">
           <Phone size="14" />
-          <span>+971 507648860</span>
+          <span>+971 567648660</span>
         </a>
-        <a href="mailto:info@shajadhrconsultancy.com" class="contact-item">
+        <a href="mailto:info@shahjadhrconsultancy.com" class="contact-item">
           <Mail size="14" />
-          <span>info@shajadhrconsultancy.com</span>
+          <span>info@shahjadhrconsultancy.com</span>
         </a>
       </div>
       <div class="topbar-social">

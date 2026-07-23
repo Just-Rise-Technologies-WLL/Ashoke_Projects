@@ -25,7 +25,7 @@ const openModal = () => {
         <Button @click="openModal" variant="primary" class="cta-btn-primary">
           REQUEST MANPOWER NOW <ArrowRight size="16" />
         </Button>
-        <Button to="tel:+971509390051" variant="outline" class="cta-btn-outline">
+        <Button to="tel:+971589390051" variant="outline" class="cta-btn-outline">
           <PhoneCall size="16" /> CALL US NOW
         </Button>
       </div>

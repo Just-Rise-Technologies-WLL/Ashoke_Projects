@@ -83,7 +83,7 @@ const openModal = () => {
           <Button @click="openModal" variant="primary" class="primary-action">
              REQUEST MANPOWER <ArrowRight size="18" />
           </Button>
-          <Button to="tel:+971509390051" variant="outline" class="outline-action">
+          <Button to="tel:+971589390051" variant="outline" class="outline-action">
             <PhoneCall size="18" /> CALL NOW
           </Button>
         </div>
