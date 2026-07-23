@@ -36,7 +36,7 @@ import { Target, Lightbulb, ShieldCheck } from 'lucide-vue-next'
             </p>
           </div>
           <div class="about-image-wrapper">
-             <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Construction Work" class="inner-image" />
+             <img src="/images/about.jpg" alt="Construction Work" class="inner-image" />
           </div>
         </div>
       </section>

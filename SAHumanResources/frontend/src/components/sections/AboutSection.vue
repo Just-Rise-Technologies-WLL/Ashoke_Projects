@@ -8,7 +8,7 @@ import Button from '../ui/Button.vue'
     <div class="container about-container">
       
       <div class="about-image-wrapper">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356f54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Construction Work" class="about-image" />
+        <img src="/images/about.jpg" alt="Construction Work" class="about-image" />
         <div class="badge">
           <ShieldCheck size="32" class="badge-icon" />
           <div class="badge-text">

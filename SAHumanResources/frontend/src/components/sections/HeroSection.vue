@@ -20,61 +20,22 @@ const slides = [
   {
     image: '/images/hero3.jpg',
     subtitle: 'CONSTRUCTION LEADERS',
-    title: 'RELIABLE BUILDERS<br/>& MAINTENANCE TEAM<br/> <span class="highlight">IN DUBAI</span>',
+    title: 'RELIABLE BUILDERS<br/> <span class="highlight">IN DUBAI</span>',
     desc: 'Certified professionals dedicated to maintaining the highest safety and building construction standards.'
   }
 ]
 
 const currentSlide = ref(0)
-const typedTitle = ref('')
-const isTyping = ref(false)
 let slideInterval
-let typingTimeout
-
-const typeHtml = (html) => {
-  clearTimeout(typingTimeout)
-  typedTitle.value = ''
-  isTyping.value = true
-  let i = 0
-  
-  const step = () => {
-    if (i >= html.length) {
-      isTyping.value = false
-      return
-    }
-    
-    if (html[i] === '<') {
-      const tagEndIndex = html.indexOf('>', i)
-      if (tagEndIndex !== -1) {
-        typedTitle.value += html.substring(i, tagEndIndex + 1)
-        i = tagEndIndex + 1
-      } else {
-        typedTitle.value += html[i]
-        i++
-      }
-    } else {
-      typedTitle.value += html[i]
-      i++
-    }
-    typingTimeout = setTimeout(step, 40) // 40ms typing speed
-  }
-  
-  step()
-}
-
-const nextSlide = () => {
-  currentSlide.value = (currentSlide.value + 1) % slides.length
-  typeHtml(slides[currentSlide.value].title)
-}
 
 onMounted(() => {
-  typeHtml(slides[currentSlide.value].title)
-  slideInterval = setInterval(nextSlide, 7000) // 7s interval to accommodate typing + viewing
+  slideInterval = setInterval(() => {
+    currentSlide.value = (currentSlide.value + 1) % slides.length
+  }, 5000)
 })
 
 onUnmounted(() => {
   clearInterval(slideInterval)
-  clearTimeout(typingTimeout)
 })
 
 const openModal = () => {
@@ -103,7 +64,7 @@ const openModal = () => {
         <Transition name="text-slide" mode="out-in">
           <div :key="currentSlide">
             <h3 class="hero-subtitle">{{ slides[currentSlide].subtitle }}</h3>
-            <h1 class="hero-title" :class="{ 'typing-active': isTyping }" v-html="typedTitle"></h1>
+            <h1 class="hero-title" v-html="slides[currentSlide].title"></h1>
             
             <p class="hero-desc">
               {{ slides[currentSlide].desc }}
@@ -135,10 +96,10 @@ const openModal = () => {
 <style scoped>
 .hero-section {
   position: relative;
-  min-height: 700px;
+  min-height: 540px;
   display: flex;
   align-items: center;
-  padding: 80px 0;
+  padding: 40px 0;
   overflow: hidden;
   background-color: #f4f6f4;
 }
@@ -200,26 +161,14 @@ const openModal = () => {
 }
 
 .hero-title {
-  font-size: 64px;
+  font-size: 52px;
   color: #1a1e29; /* Dark shade matching the screenshot text */
   font-weight: 900;
   line-height: 1.1;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
-.hero-title.typing-active::after {
-  content: '|';
-  color: var(--color-primary);
-  animation: blinkCursor 0.7s infinite;
-  margin-left: 4px;
-}
-
-@keyframes blinkCursor {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.highlight {
+:deep(.highlight) {
   color: var(--color-primary); /* Matching "IN UAE" green */
 }
 
@@ -227,7 +176,7 @@ const openModal = () => {
   font-size: 18px;
   color: var(--color-text-main);
   max-width: 550px;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   line-height: 1.6;
 }
 
@@ -235,7 +184,7 @@ const openModal = () => {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .feature {

@@ -7,19 +7,19 @@ import CtaBannerSection from '@/components/sections/CtaBannerSection.vue'
 
 // 13 Categories based on the user's design request
 const categories = [
-  { title: 'Aluminium Fitter', img: 'https://images.unsplash.com/photo-1502014822147-1aedfb0676e0?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Setting Carpenter', img: 'https://images.unsplash.com/photo-1622345097495-236b32add1e4?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Furniture Carpenter', img: 'https://images.unsplash.com/photo-1540569014015-19a7be504e3a?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Wall Painting', img: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Mason', img: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Rigger', img: 'https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Helper', img: 'https://images.unsplash.com/photo-1589939705384-5185137a7f05?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Plumber', img: 'https://images.unsplash.com/photo-1585704160432-721245fa8108?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Steel Fixer', img: 'https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Pipe Fitter', img: 'https://images.unsplash.com/photo-1607567746777-6f81e6e06b38?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Welder', img: 'https://images.unsplash.com/photo-1506466010722-395aa28fc8ce?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Electrician', img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Duct Man', img: 'https://images.unsplash.com/photo-1625471138244-640a3dd9aaef?auto=format&fit=crop&w=600&q=80' }
+  { title: 'Aluminium Fitter', img: '/images/categories/aluminium_fitter.jpg' },
+  { title: 'Setting Carpenter', img: '/images/categories/setting_carpenter.jpg' },
+  { title: 'Furniture Carpenter', img: '/images/categories/furniture_carpenter.jpg' },
+  { title: 'Wall Painting', img: '/images/categories/wall_painting.jpg' },
+  { title: 'Mason', img: '/images/categories/mason.jpg' },
+  { title: 'Rigger', img: '/images/categories/rigger.jpg' },
+  { title: 'Helper', img: '/images/categories/helper.jpg' },
+  { title: 'Plumber', img: '/images/categories/plumber.jpg' },
+  { title: 'Steel Fixer', img: '/images/categories/steel_fixer.jpg' },
+  { title: 'Pipe Fitter', img: '/images/categories/pipe_fitter.jpg' },
+  { title: 'Welder', img: '/images/categories/welder.jpg' },
+  { title: 'Electrician', img: '/images/categories/electrician.jpg' },
+  { title: 'Duct Man', img: '/images/categories/duct_man.jpg' }
 ]
 </script>
 
