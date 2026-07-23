@@ -1,26 +1,66 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import { ArrowRight, Wrench } from 'lucide-vue-next'
+
+const currentSlide = ref(0)
+let slideTimer = null
+
+const slides = [
+  {
+    title: 'Driving <span class="highlight">Quality</span>.<br>Delivering <span class="highlight">Trust</span>.',
+    desc: 'Your trusted partner for high-quality, genuine, and aftermarket auto spare parts. We keep your fleet and personal vehicles moving with zero downtime.',
+    image: '/images/hero/slide1.jpg'
+  },
+  {
+    title: 'Precision <span class="highlight">Fitment</span>.<br>Absolute <span class="highlight">Safety</span>.',
+    desc: 'Sourcing directly from verified global manufacturers to guarantee exact compatibility, durability, and ultimate road security.',
+    image: '/images/hero/slide2.jpg'
+  },
+  {
+    title: 'Global <span class="highlight">Logistics</span>.<br>Prompt <span class="highlight">Delivery</span>.',
+    desc: 'Operating out of our Al Quoz logistics hub in Dubai to dispatch orders swiftly across the GCC with zero delays.',
+    image: '/images/hero/slide3.jpg'
+  }
+]
+
+onMounted(() => {
+  slideTimer = setInterval(() => {
+    currentSlide.value = (currentSlide.value + 1) % slides.length
+  }, 5000)
+})
+
+onUnmounted(() => {
+  if (slideTimer) clearInterval(slideTimer)
+})
 </script>
 
 <template>
-  <section class="hero-section">
+  <!-- Main section with dynamic background image transition -->
+  <section 
+    class="hero-section" 
+    :style="{ backgroundImage: 'linear-gradient(rgba(10, 11, 13, 0.82), rgba(10, 11, 13, 0.88)), url(' + slides[currentSlide].image + ')' }"
+  >
+    <!-- High-tech grid backdrop overlay -->
+    <div class="grid-overlay"></div>
+    
     <div class="container hero-inner">
       
-      <!-- Text Content -->
-      <div class="hero-content animate-fade-in">
-        <div class="hero-tag">
+      <!-- Text Content with Transition -->
+      <div class="hero-content">
+        <div class="hero-tag animate-fade-in">
           <Wrench size="14" />
           <span>PREMIUM AUTO PARTS DISTRIBUTOR</span>
         </div>
-        <h1 class="hero-title">
-          Driving <span class="highlight">Quality</span>.<br>
-          Delivering <span class="highlight">Trust</span>.
-        </h1>
-        <p class="hero-desc">
-          Your trusted partner for high-quality, genuine, and aftermarket auto spare parts. We keep your fleet and personal vehicles moving with zero downtime.
-        </p>
-        <div class="hero-actions">
+        
+        <Transition name="slide-fade" mode="out-in">
+          <div :key="currentSlide" class="slide-content-wrapper">
+            <h1 class="hero-title" v-html="slides[currentSlide].title"></h1>
+            <p class="hero-desc">{{ slides[currentSlide].desc }}</p>
+          </div>
+        </Transition>
+
+        <div class="hero-actions animate-fade-in">
           <RouterLink to="/products" class="btn btn-primary hero-btn">
             Shop Now <ArrowRight size="16" />
           </RouterLink>
@@ -50,7 +90,7 @@ import { ArrowRight, Wrench } from 'lucide-vue-next'
             <circle cx="50" cy="50" r="6" fill="#0f172a" />
           </svg>
         </div>
-        <!-- Shadow backdrop glow -->
+        <!-- Dynamic Glow background -->
         <div class="glow-backdrop"></div>
       </div>
 
@@ -68,11 +108,27 @@ import { ArrowRight, Wrench } from 'lucide-vue-next'
   position: relative;
   overflow: hidden;
   padding: 60px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
 }
 
 @media (min-width: 993px) {
   .hero-section {
-    height: calc(100vh - 252px); /* 100vh - TopBar (37px) - Navbar (80px) - Features (135px approx) */
+    height: calc(100vh - 252px);
     min-height: 500px;
     padding: 0;
   }
@@ -102,6 +158,10 @@ import { ArrowRight, Wrench } from 'lucide-vue-next'
   margin-bottom: 24px;
 }
 
+.slide-content-wrapper {
+  min-height: 250px;
+}
+
 .hero-title {
   font-size: 58px;
   font-weight: 900;
@@ -110,7 +170,7 @@ import { ArrowRight, Wrench } from 'lucide-vue-next'
   margin-bottom: 20px;
 }
 
-.hero-title .highlight {
+:deep(.hero-title .highlight) {
   color: var(--color-primary);
 }
 
@@ -163,8 +223,24 @@ import { ArrowRight, Wrench } from 'lucide-vue-next'
   position: absolute;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.1) 0%, transparent 70%);
   z-index: 1;
+}
+
+/* Slide Transition Animations */
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-fade-enter-from {
+  opacity: 0;
+  transform: translateX(15px);
+}
+
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(-15px);
 }
 
 @keyframes floatRotor {
@@ -195,6 +271,10 @@ import { ArrowRight, Wrench } from 'lucide-vue-next'
     justify-content: center;
   }
   
+  .slide-content-wrapper {
+    min-height: 200px;
+  }
+
   .hero-desc {
     margin-left: auto;
     margin-right: auto;
