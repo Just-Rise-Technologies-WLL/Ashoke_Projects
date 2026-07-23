@@ -89,6 +89,24 @@ const openModal = () => {
         </div>
       </div>
       
+      <!-- Floating MOHRE Compliant trust badge -->
+      <div class="mohre-badge-wrapper">
+        <div class="mohre-badge">
+          <div class="mohre-badge-inner">
+            <div class="shield-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#4caf50" stroke-width="2.5" class="shield-svg">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 11l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="mohre-text">
+              <span class="mohre-title">MOHRE</span>
+              <span class="mohre-subtitle">COMPLIANT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </section>
 </template>
@@ -102,6 +120,81 @@ const openModal = () => {
   padding: 40px 0;
   overflow: hidden;
   background-color: #f4f6f4;
+}
+
+/* Floating MOHRE badge styling */
+.mohre-badge-wrapper {
+  position: absolute;
+  right: 60px;
+  bottom: 80px;
+  z-index: 5;
+  animation: pulseBadge 3s ease-in-out infinite;
+}
+
+.mohre-badge {
+  background: white;
+  padding: 16px 28px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 71, 27, 0.12);
+  border: 1px solid rgba(0, 71, 27, 0.05);
+}
+
+.mohre-badge-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.shield-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mohre-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.mohre-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: #00471b;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+
+.mohre-subtitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: #757575;
+  letter-spacing: 1px;
+}
+
+@keyframes pulseBadge {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.02);
+  }
+}
+
+@media (max-width: 992px) {
+  .mohre-badge-wrapper {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    animation: none;
+  }
+  .mohre-badge {
+    padding: 12px 20px;
+  }
+  .mohre-title {
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 993px) {
