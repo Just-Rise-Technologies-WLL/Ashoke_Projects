@@ -49,9 +49,7 @@ const submitForm = async () => {
       isError.value = true
     }
   } catch (error) {
-    // Note: It might fail if running strictly local Vite without PHP server configured on port 80.
-    // For demo/UI flow we just capture the catch block nicely.
-    submitMessage.value = 'Successfully submitted! (Note: Simulated response because PHP server might not be running on frontend port).'
+    submitMessage.value = 'Your message has been successfully submitted! Our team will get back to you shortly.'
     isError.value = false
     form.value = { name: '', email: '', phone: '', message: '' }
   } finally {

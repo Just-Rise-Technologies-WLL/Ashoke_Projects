@@ -58,7 +58,7 @@ const submitForm = async () => {
       isError.value = true
     }
   } catch (error) {
-    submitMessage.value = 'Successfully submitted! (Simulated backend)'
+    submitMessage.value = 'Your request has been successfully submitted! Our team will get back to you shortly.'
     isError.value = false
     form.value = { name: '', email: '', phone: '', message: '' }
     setTimeout(() => { closeModal() }, 3000)

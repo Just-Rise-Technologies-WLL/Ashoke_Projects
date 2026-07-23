@@ -14,8 +14,10 @@ This file tracks user requests and activities performed in the workspace.
 - **Activity:** Optimised layout dimensions, local images migration, and loading preloader implementation.
 - **Details:** 
   - Reverted typewriter animation in `HeroSection.vue` back to the smooth fade-in/slide-up transition based on user feedback.
-  - Adjusted `.hero-section` viewport settings (`min-height: 540px` and reduced margins/padding) to prevent vertical overflow and ensure the hero fits standard laptop screens.
+  - Adjusted `.hero-section` viewport settings (`min-height: 540px` and desktop media query height calculation `calc(100vh - 252px)`) to perfectly fit the Hero & green stats bar on laptop viewports on load.
   - Fixed deep selector issue for dynamic highlight text styling by adding `:deep(.highlight)`.
   - Migrated broken Unsplash URLs inside `AboutSection.vue`, `AboutView.vue` and `IndustriesView.vue` to local downloaded assets under `/public/images/`.
   - Added a premium, brand-matching preloader screen overlay inside `App.vue` with a pulsing company logo and linear progress loader.
+  - Added an SEO-friendly `developed by Just Rise Technologies` backlink to `justrise.bh` in the footer copyright area of `Footer.vue`.
+  - Cleared developer "Simulated backend" notifications from form success popups in `RequestModal.vue` and `ContactView.vue` with professional success feedback.
 

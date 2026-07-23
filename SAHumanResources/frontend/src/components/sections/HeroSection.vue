@@ -104,6 +104,14 @@ const openModal = () => {
   background-color: #f4f6f4;
 }
 
+@media (min-width: 993px) {
+  .hero-section {
+    height: calc(100vh - 252px);
+    min-height: 500px;
+    padding: 0;
+  }
+}
+
 /* Background Slider Architecture */
 .hero-slider {
   position: absolute;

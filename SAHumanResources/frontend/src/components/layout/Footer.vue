@@ -71,7 +71,7 @@ import { MapPin, Phone, Mail, Facebook, Linkedin, Instagram } from 'lucide-vue-n
     
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p>&copy; 2026 Shajad Ahmad Human Resources Consultancies L.L.C. All Rights Reserved.</p>
+        <p>&copy; 2026 Shajad Ahmad Human Resources Consultancies L.L.C. All Rights Reserved. Developed by <a href="https://justrise.bh" target="_blank" rel="noopener" class="developer-link">Just Rise Technologies</a>.</p>
         <div class="footer-legal">
           <RouterLink to="/privacy-policy">Privacy Policy</RouterLink> | 
           <RouterLink to="/terms-conditions">Terms & Conditions</RouterLink>
@@ -221,6 +221,18 @@ import { MapPin, Phone, Mail, Facebook, Linkedin, Instagram } from 'lucide-vue-n
 
 .whatsapp-float:hover {
   transform: scale(1.1);
+}
+
+.developer-link {
+  color: var(--color-accent, #c9a054);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.developer-link:hover {
+  color: white;
+  text-decoration: underline;
 }
 
 @media (max-width: 992px) {
