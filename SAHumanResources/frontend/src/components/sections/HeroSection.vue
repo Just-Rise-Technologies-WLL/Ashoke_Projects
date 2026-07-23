@@ -5,22 +5,76 @@ import Button from '../ui/Button.vue'
 import { isRequestModalOpen } from '@/composables/useModal'
 
 const slides = [
-  'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-  'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-  'https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'
+  {
+    image: '/images/hero1.jpg',
+    subtitle: 'YOUR TRUSTED',
+    title: 'MANPOWER <br/>SUPPLY PARTNER<br/> <span class="highlight">IN UAE</span>',
+    desc: 'Providing skilled and semi-skilled workforce for construction, fit-out, MEP and building maintenance projects across UAE.'
+  },
+  {
+    image: '/images/hero2.jpg',
+    subtitle: 'EXPERT MEP & FIT-OUT',
+    title: 'SKILLED WORKFORCE<br/> <span class="highlight">ON DEMAND</span>',
+    desc: 'Empowering your projects with experienced electrical, plumbing, and interior fit-out professionals.'
+  },
+  {
+    image: '/images/hero3.jpg',
+    subtitle: 'CONSTRUCTION LEADERS',
+    title: 'RELIABLE BUILDERS<br/>& MAINTENANCE TEAM<br/> <span class="highlight">IN DUBAI</span>',
+    desc: 'Certified professionals dedicated to maintaining the highest safety and building construction standards.'
+  }
 ]
 
 const currentSlide = ref(0)
+const typedTitle = ref('')
+const isTyping = ref(false)
 let slideInterval
+let typingTimeout
+
+const typeHtml = (html) => {
+  clearTimeout(typingTimeout)
+  typedTitle.value = ''
+  isTyping.value = true
+  let i = 0
+  
+  const step = () => {
+    if (i >= html.length) {
+      isTyping.value = false
+      return
+    }
+    
+    if (html[i] === '<') {
+      const tagEndIndex = html.indexOf('>', i)
+      if (tagEndIndex !== -1) {
+        typedTitle.value += html.substring(i, tagEndIndex + 1)
+        i = tagEndIndex + 1
+      } else {
+        typedTitle.value += html[i]
+        i++
+      }
+    } else {
+      typedTitle.value += html[i]
+      i++
+    }
+    typingTimeout = setTimeout(step, 40) // 40ms typing speed
+  }
+  
+  step()
+}
+
+const nextSlide = () => {
+  currentSlide.value = (currentSlide.value + 1) % slides.length
+  typeHtml(slides[currentSlide.value].title)
+}
 
 onMounted(() => {
-  slideInterval = setInterval(() => {
-    currentSlide.value = (currentSlide.value + 1) % slides.length
-  }, 5000)
+  typeHtml(slides[currentSlide.value].title)
+  slideInterval = setInterval(nextSlide, 7000) // 7s interval to accommodate typing + viewing
 })
 
 onUnmounted(() => {
   clearInterval(slideInterval)
+  clearTimeout(typingTimeout)
 })
 
 const openModal = () => {
@@ -34,11 +88,11 @@ const openModal = () => {
     <!-- Background Slider -->
     <div class="hero-slider">
       <div 
-        v-for="(img, idx) in slides" 
+        v-for="(slide, idx) in slides" 
         :key="idx" 
         class="slide-bg" 
         :class="{ active: currentSlide === idx }"
-        :style="{ backgroundImage: `url(${img})` }"
+        :style="{ backgroundImage: `url(${slide.image})` }"
       ></div>
     </div>
     
@@ -46,12 +100,16 @@ const openModal = () => {
     <div class="container hero-container">
       
       <div class="hero-content">
-        <h3 class="hero-subtitle">YOUR TRUSTED</h3>
-        <h1 class="hero-title">MANPOWER <br/>SUPPLY PARTNER<br/> <span class="highlight">IN UAE</span></h1>
-        
-        <p class="hero-desc">
-          Providing skilled and semi-skilled workforce for construction, fit-out, MEP and building maintenance projects across UAE.
-        </p>
+        <Transition name="text-slide" mode="out-in">
+          <div :key="currentSlide">
+            <h3 class="hero-subtitle">{{ slides[currentSlide].subtitle }}</h3>
+            <h1 class="hero-title" :class="{ 'typing-active': isTyping }" v-html="typedTitle"></h1>
+            
+            <p class="hero-desc">
+              {{ slides[currentSlide].desc }}
+            </p>
+          </div>
+        </Transition>
         
         <div class="hero-features">
           <div class="feature"><HardHat size="24" class="feature-icon" /> <span>Construction</span></div>
@@ -62,7 +120,7 @@ const openModal = () => {
         
         <div class="hero-actions">
           <Button @click="openModal" variant="primary" class="primary-action">
-            REQUEST MANPOWER <ArrowRight size="18" />
+             REQUEST MANPOWER <ArrowRight size="18" />
           </Button>
           <Button to="tel:+971509390051" variant="outline" class="outline-action">
             <PhoneCall size="18" /> CALL NOW
@@ -147,6 +205,18 @@ const openModal = () => {
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 24px;
+}
+
+.hero-title.typing-active::after {
+  content: '|';
+  color: var(--color-primary);
+  animation: blinkCursor 0.7s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .highlight {
@@ -246,5 +316,21 @@ const openModal = () => {
   .hero-actions > * {
     width: 100%;
   }
+}
+
+/* Text Transition */
+.text-slide-enter-active,
+.text-slide-leave-active {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-slide-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.text-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 </style>
