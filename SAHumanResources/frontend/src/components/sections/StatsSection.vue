@@ -109,15 +109,33 @@ import { Users, Clock, ShieldCheck, Award, Briefcase } from 'lucide-vue-next'
   .stats-section {
     margin-top: 0;
     border-radius: 0;
+    padding: 30px 20px;
+  }
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
   }
   .stat-item {
-    min-width: calc(50% - 10px);
+    min-width: 0;
+  }
+  .stat-item:nth-child(5) {
+    grid-column: span 2;
+    justify-self: center;
+    max-width: 260px;
+    width: 100%;
   }
 }
 
-@media (max-width: 480px) {
-  .stat-item {
-    min-width: 100%;
+@media (max-width: 576px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .stat-item:nth-child(5) {
+    grid-column: span 1;
+    justify-self: stretch;
+    max-width: none;
   }
 }
 </style>

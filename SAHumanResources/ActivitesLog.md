@@ -20,4 +20,6 @@ This file tracks user requests and activities performed in the workspace.
   - Added a premium, brand-matching preloader screen overlay inside `App.vue` with a pulsing company logo and linear progress loader.
   - Added an SEO-friendly `developed by Just Rise Technologies` backlink to `justrise.bh` in the footer copyright area of `Footer.vue`.
   - Cleared developer "Simulated backend" notifications from form success popups in `RequestModal.vue` and `ContactView.vue` with professional success feedback.
-
+  - Implemented automatic scroll-to-top behavior inside Vue Router (`router/index.js`) on every page navigation.
+  - Redesigned the responsive layout of `StatsSection.vue` to use CSS Grid on tablets (centering the 5th item) and 1 vertical column on mobile screens to prevent cramped text.
+  - Created and registered new page views for `PrivacyPolicyView.vue` and `TermsConditionsView.vue` to resolve the non-functional bottom footer links.
