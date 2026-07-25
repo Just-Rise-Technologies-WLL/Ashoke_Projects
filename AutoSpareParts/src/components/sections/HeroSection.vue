@@ -37,10 +37,16 @@ onUnmounted(() => {
 
 <template>
   <!-- Main section with dynamic background image transition -->
-  <section 
-    class="hero-section" 
-    :style="{ backgroundImage: 'linear-gradient(rgba(10, 11, 13, 0.82), rgba(10, 11, 13, 0.88)), url(' + slides[currentSlide].image + ')' }"
-  >
+  <section class="hero-section">
+    <!-- Slide Backgrounds for smooth crossfade transition -->
+    <div 
+      v-for="(slide, index) in slides" 
+      :key="index"
+      class="hero-slide-bg"
+      :class="{ active: index === currentSlide }"
+      :style="{ backgroundImage: 'linear-gradient(rgba(10, 11, 13, 0.82), rgba(10, 11, 13, 0.88)), url(' + slide.image + ')' }"
+    ></div>
+
     <!-- High-tech grid backdrop overlay -->
     <div class="grid-overlay"></div>
     
@@ -84,9 +90,22 @@ onUnmounted(() => {
           
           <!-- Gear SVG -->
           <svg viewBox="0 0 100 100" class="showcase-svg gear">
-            <circle cx="50" cy="50" r="35" fill="none" stroke="#475569" stroke-width="6" />
-            <path d="M50,10 L50,0 M60,12 L67,4 M70,16 L80,10 M78,22 L88,18 M84,30 L94,30 M86,38 L96,42 M85,47 L95,53 M82,56 L90,64 M76,64 L83,73 M68,71 L73,81 M60,76 L63,87 M50,78 L50,90 M40,76 L37,87 M32,71 L27,81 M24,64 L17,73 M18,56 L10,64 M15,47 L5,53 M14,38 L4,42 M16,30 L6,30 M22,22 L12,18 M30,16 L20,10 M40,12 L33,4" stroke="#475569" stroke-width="6" stroke-linecap="round" />
-            <circle cx="50" cy="50" r="20" fill="#1e293b" stroke="#64748b" stroke-width="2" />
+            <circle cx="50" cy="50" r="28" fill="none" stroke="#475569" stroke-width="6" />
+            <g fill="#475569">
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(0 50 50)" />
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(30 50 50)" />
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(60 50 50)" />
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(90 50 50)" />
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(120 50 50)" />
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(150 50 50)" />
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(180 50 50)" />
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(210 50 50)" />
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(240 50 50)" />
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(270 50 50)" />
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(300 50 50)" />
+              <rect x="47" y="12" width="6" height="10" rx="1.5" transform="rotate(330 50 50)" />
+            </g>
+            <circle cx="50" cy="50" r="18" fill="#1e293b" stroke="#64748b" stroke-width="2" />
             <circle cx="50" cy="50" r="6" fill="#0f172a" />
           </svg>
         </div>
@@ -108,10 +127,24 @@ onUnmounted(() => {
   position: relative;
   overflow: hidden;
   padding: 60px 0;
+}
+
+.hero-slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: background-image 1s ease-in-out;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  z-index: 1;
+}
+
+.hero-slide-bg.active {
+  opacity: 1;
 }
 
 .grid-overlay {
@@ -124,6 +157,7 @@ onUnmounted(() => {
                     linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
+  z-index: 2;
 }
 
 @media (min-width: 993px) {

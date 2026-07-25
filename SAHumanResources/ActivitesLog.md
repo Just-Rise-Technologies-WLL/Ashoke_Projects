@@ -42,6 +42,10 @@ This file tracks user requests and activities performed in the workspace.
   - Replaced duplicate/mismatched assets for `furniture_carpenter.jpg`, `pipe_fitter.jpg`, and `duct_man.jpg` with newly generated, high-quality professional images matching their respective designations.
   - Replaced the structural frame/building image for `welder.jpg` with a professional welder working on steel beams with flying sparks.
   - Replaced incorrect placeholder inline SVG logos in `AutoSpareParts` project (specifically in `Navbar.vue` and `App.vue` preloader) with the correct corporate PNG logo asset `/images/logo.png`.
+  - Rebuilt the rotating gear SVG in `AutoSpareParts/src/components/sections/HeroSection.vue` with a clean, mathematically correct design using 12 rotated rectangular teeth.
+  - Implemented smooth background crossfade transitions (1.2s fade) in the Hero section slides by separating slides into individual divs.
+  - Resolved the subpixel rendering bug on the "Quality Guaranteed" card in `AboutView.vue` by replacing the native CSS `border-left` with an absolutely positioned `::before` pseudo-element.
+
 
 
 

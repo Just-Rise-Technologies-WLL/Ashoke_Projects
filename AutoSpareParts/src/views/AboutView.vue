@@ -194,8 +194,18 @@ main {
   width: 100%;
   position: relative;
   overflow: hidden;
-  border-left: 5px solid var(--color-primary);
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.visual-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--color-primary);
+  z-index: 10;
 }
 
 .brand-badge {
