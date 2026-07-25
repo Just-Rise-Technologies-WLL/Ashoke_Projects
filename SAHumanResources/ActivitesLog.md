@@ -24,3 +24,25 @@ This file tracks user requests and activities performed in the workspace.
   - Redesigned the responsive layout of `StatsSection.vue` to use CSS Grid on tablets (centering the 5th item) and 1 vertical column on mobile screens to prevent cramped text.
   - Created and registered new page views for `PrivacyPolicyView.vue` and `TermsConditionsView.vue` to resolve the non-functional bottom footer links.
   - Copied `contact.php` to the `/public` directory and updated the frontend submit calls to use relative API endpoints (`/contact.php`) for seamless hosting.
+
+## [2026-07-24]
+- **Activity:** Created sitemap.xml and robots.txt for all three websites.
+- **Details:** 
+  - Added `sitemap.xml` and `robots.txt` in `/public` directory for AutoSpareParts (`https://mtnautospareparts.com`).
+  - Added `sitemap.xml` and `robots.txt` in `/public` directory for FreshMeet (`https://freshcutsmeat.ae`).
+  - Added `sitemap.xml` and `robots.txt` in `/frontend/public` directory for SAHumanResources (`https://shahjadhrconsultancy.com`).
+
+## [2026-07-25]
+- **Activity:** Restyled manpower category cards in SAHumanResources.
+- **Details:** 
+  - Removed the dark shade overlay gradient and standard overlay from `ManpowerCategoriesSection.vue`.
+  - Reformatted titles into pill-shaped badges in the top-right corner of each card.
+  - Added smooth background image scaling (1.08x) and pill translation on hover.
+  - Restyled the `IndustriesView.vue` page cards similarly: removed the bottom green banner overlay, converted labels into top-right pill badges, and added identical hover zoom and badge animations.
+  - Replaced duplicate/mismatched assets for `furniture_carpenter.jpg`, `pipe_fitter.jpg`, and `duct_man.jpg` with newly generated, high-quality professional images matching their respective designations.
+  - Replaced the structural frame/building image for `welder.jpg` with a professional welder working on steel beams with flying sparks.
+
+
+
+
+

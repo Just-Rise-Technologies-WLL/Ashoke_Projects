@@ -24,8 +24,8 @@ const categories = [
           v-for="(cat, index) in categories" 
           :key="index" 
           class="category-card"
-          :style="{ backgroundImage: 'linear-gradient(to top, rgba(0, 71, 27, 0.85) 0%, rgba(0, 0, 0, 0.3) 70%), url(' + cat.img + ')' }"
         >
+          <div class="card-image" :style="{ backgroundImage: 'url(' + cat.img + ')' }"></div>
           <div class="card-content">
             <h3 class="cat-title">{{ cat.title }}</h3>
           </div>
@@ -64,53 +64,61 @@ const categories = [
 
 .category-card {
   height: 220px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   border-radius: var(--border-radius);
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  padding: 24px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.category-card::before {
-  content: '';
+.card-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 71, 27, 0.1);
-  transition: all 0.4s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
 }
 
 .category-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 71, 27, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 71, 27, 0.12);
 }
 
-.category-card:hover::before {
-  background-color: rgba(0, 71, 27, 0);
+.category-card:hover .card-image {
+  transform: scale(1.08);
 }
 
 .card-content {
-  position: relative;
+  position: absolute;
+  top: 16px;
+  right: 16px;
   z-index: 2;
 }
 
 .cat-title {
+  background-color: var(--color-primary);
   color: white;
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 8px 18px;
+  border-radius: 100px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover .cat-title {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(109, 181, 53, 0.3);
 }
 
 .action-footer {

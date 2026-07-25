@@ -143,23 +143,30 @@ const categories = [
 }
 
 .img-wrapper:hover .vis-img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .vis-label {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(35, 84, 34, 0.95); /* Specific green from screenshot with slight transparency */
+  top: 16px;
+  right: 16px;
+  background-color: var(--color-primary);
   color: white;
-  padding: 18px;
-  font-size: 18px;
+  padding: 8px 18px;
+  font-size: 13px;
   font-family: var(--font-family);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-align: center;
-  backdrop-filter: blur(4px);
+  border-radius: 100px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.img-wrapper:hover .vis-label {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(109, 181, 53, 0.3);
 }
 
 /* Responsive constraints */
