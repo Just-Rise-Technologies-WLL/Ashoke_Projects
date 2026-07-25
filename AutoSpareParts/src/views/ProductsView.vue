@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import TopBar from '@/components/layout/TopBar.vue'
 import Navbar from '@/components/layout/Navbar.vue'
 import Footer from '@/components/layout/Footer.vue'
-import { isRequestModalOpen } from '@/composables/useModal'
+import { isRequestModalOpen, prefilledText } from '@/composables/useModal'
 import { Search, Info, HelpCircle } from 'lucide-vue-next'
 
 const searchQueryParams = ref('')
@@ -54,7 +54,8 @@ const selectCategory = (category) => {
   selectedCategoryFilter.value = category
 }
 
-const openQuotation = () => {
+const openQuotation = (productInfo = '') => {
+  prefilledText.value = productInfo
   isRequestModalOpen.value = true
 }
 </script>
@@ -117,7 +118,7 @@ const openQuotation = () => {
                 <h3 class="product-title">{{ prod.name }}</h3>
                 <p class="product-desc">{{ prod.desc }}</p>
                 <div class="product-footer">
-                  <button @click="openQuotation" class="btn btn-primary quote-btn">
+                  <button @click="openQuotation(prod.name + ' (' + prod.code + ')')" class="btn btn-primary quote-btn">
                     Request Quote
                   </button>
                 </div>
@@ -129,7 +130,7 @@ const openQuotation = () => {
               <HelpCircle size="48" class="empty-icon" />
               <h3>No Parts Found</h3>
               <p>We supply custom orders too. Click below to query our logistics experts directly.</p>
-              <button @click="openQuotation" class="btn btn-primary">Request Custom Quotation</button>
+              <button @click="openQuotation('')" class="btn btn-primary">Request Custom Quotation</button>
             </div>
 
           </div>

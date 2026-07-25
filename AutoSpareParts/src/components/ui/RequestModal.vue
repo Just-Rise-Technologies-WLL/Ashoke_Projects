@@ -1,7 +1,7 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { X, Send, CheckCircle2 } from 'lucide-vue-next'
-import { isRequestModalOpen } from '@/composables/useModal'
+import { isRequestModalOpen, prefilledText } from '@/composables/useModal'
 
 const form = ref({
   name: '',
@@ -13,6 +13,12 @@ const form = ref({
 const isSubmitting = ref(false)
 const submitMessage = ref('')
 const isError = ref(false)
+
+watch(isRequestModalOpen, (isOpen) => {
+  if (isOpen) {
+    form.value.message = prefilledText.value || ''
+  }
+})
 
 const closeModal = () => {
   isRequestModalOpen.value = false
@@ -154,7 +160,7 @@ const handleSubmit = async () => {
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
-  transition: var(--transition-smooth);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-overlay.is-active {
@@ -169,8 +175,8 @@ const handleSubmit = async () => {
   border-radius: var(--border-radius-md);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   position: relative;
-  transform: translateY(20px);
-  transition: var(--transition-smooth);
+  transform: translateY(25px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-overlay.is-active .modal-content {

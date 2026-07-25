@@ -1,28 +1,48 @@
 <script setup>
+import { ref, onMounted } from 'vue'
+
+const gridRef = ref(null)
+const isVisible = ref(false)
+
+onMounted(() => {
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      isVisible.value = true
+      observer.disconnect()
+    }
+  }, {
+    threshold: 0.1
+  })
+  
+  if (gridRef.value) {
+    observer.observe(gridRef.value)
+  }
+})
+
 const brands = [
-  { name: 'Mercedes-Benz', isSvg: true, svg: `<svg viewBox="0 0 100 100" class="brand-logo-svg"><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="3"/><path d="M50,12 L50,50 L17,69 M50,50 L83,69" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>` },
+  { name: 'Mercedes-Benz', src: '/images/brands/mercedes.svg' },
   { name: 'Volvo', src: '/images/brands/volvo.svg' },
   { name: 'Kia', src: '/images/brands/kia.svg' },
   { name: 'Hyundai', src: '/images/brands/hyundai.svg' },
   { name: 'Nissan', src: '/images/brands/nissan.svg' },
   { name: 'Toyota', src: '/images/brands/toyota.svg' },
-  { name: 'GMC', isSvg: true, svg: `<svg viewBox="0 0 100 100" class="brand-logo-svg"><text x="50" y="65" font-family="'Impact', sans-serif" font-weight="900" font-size="44" fill="#dc2626" text-anchor="middle" letter-spacing="1">GMC</text></svg>` },
+  { name: 'GMC', src: '/images/brands/gmc.svg' },
   { name: 'Audi', src: '/images/brands/audi.svg' },
-  { name: 'Chrysler', isSvg: true, svg: `<svg viewBox="0 0 100 100" class="brand-logo-svg"><path d="M10,50 Q30,30 50,50 Q70,30 90,50 Q70,70 50,50 Q30,70 10,50 Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="10" fill="currentColor"/><path d="M5,50 L95,50" stroke="currentColor" stroke-width="1"/></svg>` },
+  { name: 'Chrysler', src: '/images/brands/chrysler.svg' },
   { name: 'Jeep', src: '/images/brands/jeep.svg' },
   { name: 'Mitsubishi', src: '/images/brands/mitsubishi.svg' },
   { name: 'Ford', src: '/images/brands/ford.svg' },
   { name: 'Honda', src: '/images/brands/honda.svg' },
-  { name: 'Jaguar', isSvg: true, svg: `<svg viewBox="0 0 100 100" class="brand-logo-svg"><path d="M10,55 Q20,35 38,42 Q50,47 62,40 Q75,32 90,50 Q75,60 55,54 Q35,48 10,55 Z" fill="currentColor"/></svg>` },
+  { name: 'Jaguar', src: '/images/brands/jaguar.svg' },
   { name: 'Porsche', src: '/images/brands/porsche.svg' },
-  { name: 'Isuzu', isSvg: true, svg: `<svg viewBox="0 0 100 100" class="brand-logo-svg"><text x="50" y="65" font-family="'Outfit', sans-serif" font-weight="900" font-size="32" fill="#dc2626" text-anchor="middle" letter-spacing="2">ISUZU</text></svg>` },
-  { name: 'Land Rover', isSvg: true, svg: `<svg viewBox="0 0 100 60" class="brand-logo-svg"><ellipse cx="50" cy="30" rx="45" ry="22" fill="#00471b" stroke="#ffffff" stroke-width="2"/><text x="50" y="35" font-family="'Impact', sans-serif" font-weight="900" font-size="11" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">LAND ROVER</text></svg>` },
-  { name: 'UD Trucks', isSvg: true, svg: `<svg viewBox="0 0 100 100" class="brand-logo-svg"><circle cx="50" cy="50" r="30" fill="#dc2626"/><text x="50" y="60" font-family="'Impact', sans-serif" font-weight="900" font-size="28" fill="#ffffff" text-anchor="middle">UD</text></svg>` },
+  { name: 'Isuzu', src: '/images/brands/isuzu.svg' },
+  { name: 'Land Rover', src: '/images/brands/landrover.svg' },
+  { name: 'UD Trucks', src: '/images/brands/udtrucks.svg' },
   { name: 'BMW', src: '/images/brands/bmw.svg' },
-  { name: 'Daihatsu', isSvg: true, svg: `<svg viewBox="0 0 100 100" class="brand-logo-svg"><path d="M25,20 L55,20 C70,20 80,32 80,50 C80,68 70,80 55,80 L25,80 Z M38,32 L38,68 L50,68 C60,68 66,60 66,50 C66,40 60,32 50,32 Z" fill="currentColor"/></svg>` },
+  { name: 'Daihatsu', src: '/images/brands/daihatsu.svg' },
   { name: 'Renault', src: '/images/brands/renault.svg' },
-  { name: 'Mopar', isSvg: true, svg: `<svg viewBox="0 0 100 100" class="brand-logo-svg"><path d="M15,20 L40,65 L50,45 L60,65 L85,20 L70,20 L50,55 L30,20 Z" fill="#0056b3"/></svg>` },
-  { name: 'Hino', isSvg: true, svg: `<svg viewBox="0 0 100 100" class="brand-logo-svg"><path d="M25,20 L38,20 L38,42 L62,42 L62,20 L75,20 L75,80 L62,80 L62,56 L38,56 L38,80 L25,80 Z" fill="#dc2626"/></svg>` },
+  { name: 'Mopar', src: '/images/brands/mopar.svg' },
+  { name: 'Hino', src: '/images/brands/hino.svg' },
   { name: 'Mazda', src: '/images/brands/mazda.svg' }
 ]
 </script>
@@ -36,13 +56,18 @@ const brands = [
         <h2 class="section-title">Top Brands <span>We Supply</span></h2>
       </div>
 
-      <div class="brands-grid">
-        <div v-for="(brand, idx) in brands" :key="idx" class="brand-card">
+      <div ref="gridRef" class="brands-grid">
+        <div 
+          v-for="(brand, idx) in brands" 
+          :key="idx" 
+          class="brand-card"
+          :class="{ 'animate-in': isVisible }"
+          :style="{ '--delay': isVisible ? (idx * 40) + 'ms' : '0ms' }"
+        >
           <div class="brand-wrapper">
             <!-- Logo container that fades out on hover -->
             <div class="brand-logo-content">
-              <div v-if="brand.isSvg" class="brand-svg-container" v-html="brand.svg"></div>
-              <img v-else :src="brand.src" :alt="brand.name" class="brand-logo-img" />
+              <img :src="brand.src" :alt="brand.name" class="brand-logo-img" />
             </div>
             <!-- Name that fades in on hover -->
             <div class="brand-name-hover">
@@ -80,7 +105,18 @@ const brands = [
   padding: 15px;
   position: relative;
   overflow: hidden;
-  transition: var(--transition-smooth);
+  opacity: 0;
+  transform: translateY(20px);
+  /* Use specific transition timings; only opacity and transform use the staggered --delay */
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0ms), 
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0ms),
+              border-color 0.3s ease 0ms,
+              box-shadow 0.3s ease 0ms;
+}
+
+.brand-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .brand-card:hover {

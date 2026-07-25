@@ -18,9 +18,7 @@ import { Phone, Mail, Globe } from 'lucide-vue-next'
         <a href="mailto:info@mtnautospareparts.com" class="contact-link">
           <Mail size="14" /> <span>info@mtnautospareparts.com</span>
         </a>
-        <a href="https://www.mtnautospareparts.com" target="_blank" class="contact-link">
-          <Globe size="14" /> <span>www.mtnautospareparts.com</span>
-        </a>
+        
       </div>
     </div>
   </div>

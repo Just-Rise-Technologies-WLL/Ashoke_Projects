@@ -55,7 +55,6 @@ onUnmounted(() => {
       <!-- Text Content with Transition -->
       <div class="hero-content">
         <div class="hero-tag animate-fade-in">
-          <Wrench size="14" />
           <span>PREMIUM AUTO PARTS DISTRIBUTOR</span>
         </div>
         

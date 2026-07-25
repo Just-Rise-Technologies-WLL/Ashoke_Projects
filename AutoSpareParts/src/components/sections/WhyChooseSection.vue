@@ -38,15 +38,36 @@ const reasons = [
           We are committed to supplying the absolute best automotive components in the region. Our robust supply chain makes us the preferred choice for workshops, fleets, and retailers.
         </p>
         
-        <!-- Car Front Outline Drawing in SVG (no image url) -->
-        <svg viewBox="0 0 200 80" width="100%" class="car-outline-svg">
-          <path d="M20,60 L40,60 C42,60 45,55 48,50 L152,50 C155,55 158,60 160,60 L180,60 C190,60 195,55 195,45 L190,30 C188,25 180,18 165,18 L155,18 C145,18 135,10 115,10 L85,10 C65,10 55,18 45,18 L35,18 C20,18 12,25 10,30 L5,45 C5,55 10,60 20,60 Z" fill="none" stroke="rgba(220, 38, 38, 0.15)" stroke-width="2" />
-          <!-- Headlights -->
-          <path d="M12,42 L25,44 L25,48 L12,48 Z" fill="none" stroke="rgba(220, 38, 38, 0.3)" stroke-width="1.5" />
-          <path d="M188,42 L175,44 L175,48 L188,48 Z" fill="none" stroke="rgba(220, 38, 38, 0.3)" stroke-width="1.5" />
-          <!-- Wheels -->
-          <circle cx="45" cy="62" r="10" fill="none" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2" />
-          <circle cx="155" cy="62" r="10" fill="none" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2" />
+        <!-- Animated Car SVG (profile view of a sleek sports car) -->
+        <svg viewBox="0 0 200 85" width="100%" class="car-outline-svg">
+          <!-- Road line moving to simulate speed -->
+          <line x1="0" y1="71" x2="200" y2="71" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2" stroke-dasharray="8 6" class="road-line" />
+          
+          <!-- Car chassis and lights group (bounces slightly) -->
+          <g class="car-chassis">
+            <!-- Main sports car body outline with wheel arches -->
+            <path d="M 15,60 C 10,60 10,48 15,48 L 25,48 C 30,48 35,45 40,42 C 55,30 65,22 80,22 L 120,22 C 135,22 145,30 155,40 L 175,43 C 185,43 190,46 190,52 L 185,60 L 162,60 C 162,47 138,47 138,60 L 62,60 C 62,47 38,47 38,60 L 15,60 Z" fill="none" class="car-body" />
+                  
+            <!-- Side window outline -->
+            <path d="M 75,26 L 118,26 C 128,26 135,31 141,37 L 143,39 L 75,39 Z" fill="none" class="car-window" />
+            <!-- Door pillar/divider -->
+            <line x1="110" y1="26" x2="110" y2="39" class="car-window-divider" />
+            
+            <!-- Sleek Headlight (Front, right) -->
+            <path d="M 178,44 L 187,46 C 187,48 185,50 183,50 L 176,48 Z" fill="none" class="car-headlight" />
+            <!-- Tail light (Rear, left) -->
+            <path d="M 14,48 L 22,48 L 20,52 L 13,52 Z" fill="none" class="car-taillight" />
+          </g>
+          
+          <!-- Rotating Wheels (spokes detail for rotation visibility) -->
+          <g class="car-wheel wheel-front">
+            <circle cx="150" cy="60" r="10" fill="none" stroke-width="2" stroke-dasharray="5 3" />
+            <circle cx="150" cy="60" r="3" fill="#ffffff" />
+          </g>
+          <g class="car-wheel wheel-back">
+            <circle cx="50" cy="60" r="10" fill="none" stroke-width="2" stroke-dasharray="5 3" />
+            <circle cx="50" cy="60" r="3" fill="#ffffff" />
+          </g>
         </svg>
       </div>
 
@@ -109,7 +130,86 @@ const reasons = [
 
 .car-outline-svg {
   max-width: 320px;
-  margin-top: 10px;
+  margin-top: 20px;
+  overflow: visible;
+}
+
+.car-body {
+  stroke: var(--color-primary);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 4px rgba(220, 38, 38, 0.6));
+}
+
+.car-headlight {
+  stroke: #ff3e3e;
+  filter: drop-shadow(0 0 6px rgba(255, 62, 62, 0.8));
+}
+
+.car-chassis {
+  animation: car-bounce 0.8s ease-in-out infinite alternate;
+}
+
+.car-wheel {
+  stroke: #ffffff;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+  animation: wheel-spin 1.2s linear infinite;
+}
+
+.wheel-front {
+  transform-origin: 150px 60px;
+}
+
+.wheel-back {
+  transform-origin: 50px 60px;
+}
+
+.car-window {
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 1.5px;
+}
+
+.car-window-divider {
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 1.5px;
+}
+
+.car-taillight {
+  stroke: #ff3e3e;
+  filter: drop-shadow(0 0 4px rgba(255, 62, 62, 0.8));
+}
+
+.road-line {
+  animation: road-slide 0.6s linear infinite;
+}
+
+/* Animations */
+@keyframes car-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1.5px);
+  }
+}
+
+@keyframes wheel-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes road-slide {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -14; /* Match stroke-dasharray (8 + 6 = 14) to loop seamlessly */
+  }
 }
 
 .reasons-grid {

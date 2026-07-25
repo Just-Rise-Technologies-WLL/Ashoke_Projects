@@ -61,8 +61,8 @@ import { CheckCircle2 } from 'lucide-vue-next'
                 <p>All our parts undergo rigorous verification to ensure perfect fitment and longevity.</p>
                 <div class="stamp-svg">
                   <svg viewBox="0 0 100 100" width="80" height="80">
-                    <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(220,38,38,0.2)" stroke-width="2" stroke-dasharray="3 3" />
-                    <text x="50" y="55" font-size="12" font-weight="900" fill="rgba(220,38,38,0.4)" text-anchor="middle">GENUINE</text>
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(220,38,38,0.4)" stroke-width="2" stroke-dasharray="3 3" />
+                    <text x="50" y="55" font-size="12" font-weight="900" fill="rgba(220,38,38,0.75)" text-anchor="middle">GENUINE</text>
                   </svg>
                 </div>
               </div>
@@ -228,7 +228,7 @@ main {
 
 .visual-card p {
   font-size: 14px;
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.6;
 }
 
@@ -281,9 +281,6 @@ main {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-  .about-visual {
-    order: -1;
   }
 }
 
