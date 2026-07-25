@@ -1,5 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="35" fill="none" stroke="#dc2626" stroke-width="8" />
-  <circle cx="50" cy="50" r="18" fill="#dc2626" />
-  <path d="M50,15 L50,5 M65,20 L73,12 M78,30 L88,26 M85,45 L95,45 M82,60 L92,64 M72,72 L80,80 M58,78 L62,88 M50,85 L50,95 M42,78 L38,88 M28,72 L20,80 M18,60 L8,64 M15,45 L5,45 M22,30 L12,26 M35,20 L27,12" stroke="#dc2626" stroke-width="8" stroke-linecap="round" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#dc2626" />
+    </radialGradient>
+  </defs>
+  <!-- Stylized Automotive Gear Background -->
+  <g fill="#111215">
+    <circle cx="64" cy="64" r="48" />
+    <!-- Gear teeth -->
+    <path d="M60,8 L68,8 L70,20 L58,20 Z" />
+    <path d="M88,14 L94,20 L86,29 L80,23 Z" />
+    <path d="M108,36 L112,44 L100,50 L96,42 Z" />
+    <path d="M120,60 L120,68 L108,70 L108,58 Z" />
+    <path d="M114,88 L108,94 L99,86 L105,80 Z" />
+    <path d="M92,108 L84,112 L78,100 L86,96 Z" />
+    <path d="M68,120 L60,120 L58,108 L70,108 Z" />
+    <path d="M40,114 L34,108 L42,99 L48,105 Z" />
+    <path d="M20,92 L16,84 L28,78 L32,86 Z" />
+    <path d="M8,68 L8,60 L20,58 L20,70 Z" />
+    <path d="M14,40 L20,34 L29,42 L23,48 Z" />
+    <path d="M36,20 L44,16 L50,28 L42,32 Z" />
+  </g>
+  <!-- Outer metallic ring border -->
+  <circle cx="64" cy="64" r="38" fill="none" stroke="#27272a" stroke-width="3" />
+  <!-- Inner Red Brand Core -->
+  <circle cx="64" cy="64" r="30" fill="url(#grad)" />
+  <!-- MTN Text -->
+  <text x="64" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">MTN</text>
 </svg>

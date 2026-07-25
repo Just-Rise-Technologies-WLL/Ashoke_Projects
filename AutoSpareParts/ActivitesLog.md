@@ -42,3 +42,7 @@ All development activities, feature updates, and tasks performed in this reposit
     - Updated `ProductsView.vue` to set `prefilledText.value` with the clicked product's name and code when clicking the "Request Quote" buttons.
     - Watched `isRequestModalOpen` in `RequestModal.vue` to automatically fill the inquiry message textarea with `prefilledText`.
     - Upgraded CSS transitions on `.modal-overlay` and `.modal-content` inside `RequestModal.vue` to use a high-performance, premium cubic-bezier timing curve (`cubic-bezier(0.16, 1, 0.3, 1)`) for ultra-smooth backdrop blur/fade and slide-up entrance animations.
+- **Task**: Updated brand favicon and configured Social/OG SEO meta tags.
+  - **Details**:
+    - Added Open Graph (Facebook) and Twitter Card tags to `index.html` referencing `/images/logo.png` for correct social sharing previews.
+    - Redesigned `favicon.svg` to feature a premium black automotive gear with a red brand core and white "MTN" lettering to match the official corporate identity.
