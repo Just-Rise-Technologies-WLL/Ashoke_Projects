@@ -16,12 +16,8 @@ onMounted(() => {
   <Transition name="fade">
     <div v-if="isLoading" class="preloader">
       <div class="loader-content">
-        <!-- SVG Pulsing Gear Logo representing MTN -->
-        <svg viewBox="0 0 100 100" width="80" height="80" class="loader-logo">
-          <circle cx="50" cy="50" r="30" fill="none" stroke="#dc2626" stroke-width="4" />
-          <circle cx="50" cy="50" r="18" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="2 3" />
-          <circle cx="50" cy="50" r="10" fill="#dc2626" />
-        </svg>
+        <!-- Pulsing corporate logo image -->
+        <img src="/images/logo.png" alt="MTN Auto Spare Parts" class="loader-logo" />
         <div class="loader-bar">
           <div class="loader-progress"></div>
         </div>
@@ -56,6 +52,9 @@ onMounted(() => {
 }
 
 .loader-logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
   animation: pulseLogo 1.5s ease-in-out infinite;
 }
 

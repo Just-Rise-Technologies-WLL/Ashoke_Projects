@@ -36,21 +36,9 @@ const isActive = (path) => {
   <header class="navbar-header">
     <div class="container navbar-inner">
       
-      <!-- Styled SVG Logo matching the screenshot -->
+      <!-- Corporate Logo Asset -->
       <RouterLink to="/" class="logo" @click="closeMobileMenu">
-        <svg viewBox="0 0 220 55" width="180" height="45" class="logo-svg">
-          <!-- Circular Gear Background -->
-          <circle cx="28" cy="27" r="18" fill="#e30b0b" />
-          <path d="M28,6 L28,2 M32,7 L30,4 M37,9 L34,7 M42,12 L38,11 M46,16 L42,15 M48,21 L44,20 M49,27 L45,27 M48,33 L44,34 M46,38 L42,39 M42,42 L38,43 M37,45 L34,47 M32,47 L30,50 M28,48 L28,52 M24,47 L26,50 M19,45 L22,47 M14,42 L18,43 M10,38 L14,39 M8,33 L12,34 M7,27 L11,27 M8,21 L12,20 M10,16 L14,15 M14,12 L18,11 M19,9 L22,7 M24,7 L26,4" stroke="#0a0b0d" stroke-width="3" stroke-linecap="round" />
-          <circle cx="28" cy="27" r="13" fill="#0a0b0d" />
-          
-          <!-- Slanted Bold "MTN" Text Inside/Overlay -->
-          <text x="14" y="34" font-family="'Outfit', sans-serif" font-weight="900" font-size="20" font-style="italic" fill="#ffffff" transform="skewX(-10)">MTN</text>
-          
-          <!-- Brand Label on Right -->
-          <text x="56" y="27" font-family="'Outfit', sans-serif" font-weight="900" font-size="26" font-style="italic" fill="#0a0b0d">MTN</text>
-          <text x="56" y="44" font-family="'Outfit', sans-serif" font-weight="700" font-size="10" letter-spacing="1.5" fill="#e30b0b">TRADING L.L.C</text>
-        </svg>
+        <img src="/images/logo.png" alt="MTN Auto Spare Parts" class="logo-img" />
       </RouterLink>
 
       <!-- Desktop Navigation Menu -->
@@ -121,6 +109,12 @@ const isActive = (path) => {
 .logo {
   display: flex;
   align-items: center;
+}
+
+.logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-menu {

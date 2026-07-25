@@ -41,6 +41,8 @@ This file tracks user requests and activities performed in the workspace.
   - Restyled the `IndustriesView.vue` page cards similarly: removed the bottom green banner overlay, converted labels into top-right pill badges, and added identical hover zoom and badge animations.
   - Replaced duplicate/mismatched assets for `furniture_carpenter.jpg`, `pipe_fitter.jpg`, and `duct_man.jpg` with newly generated, high-quality professional images matching their respective designations.
   - Replaced the structural frame/building image for `welder.jpg` with a professional welder working on steel beams with flying sparks.
+  - Replaced incorrect placeholder inline SVG logos in `AutoSpareParts` project (specifically in `Navbar.vue` and `App.vue` preloader) with the correct corporate PNG logo asset `/images/logo.png`.
+
 
 
 
