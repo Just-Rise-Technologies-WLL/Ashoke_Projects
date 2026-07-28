@@ -38,19 +38,9 @@ const isActive = (path) => {
   <header class="navbar-header">
     <div class="container navbar-inner">
       
-      <!-- Premium SVG Logo for Fresh Cuts -->
+      <!-- Official Logo for Fresh Cuts -->
       <RouterLink to="/" class="logo" @click="closeMobileMenu">
-        <svg viewBox="0 0 250 50" width="200" height="40" class="logo-svg">
-          <!-- Butcher Cleaver circular badge -->
-          <circle cx="25" cy="25" r="22" fill="#cc2900" />
-          <!-- Cleaver drawing -->
-          <path d="M15,15 L28,15 L28,26 L15,26 Z M28,22 L35,29" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" />
-          <circle cx="19" cy="19" r="1.5" fill="#ffffff" />
-          
-          <!-- Brand text -->
-          <text x="56" y="24" font-family="'Outfit', sans-serif" font-weight="900" font-size="20" letter-spacing="0.5" fill="#ffffff">FRESH CUTS</text>
-          <text x="56" y="38" font-family="'Outfit', sans-serif" font-weight="700" font-size="9" letter-spacing="1" fill="#cc2900">MEAT TRADING FZCO</text>
-        </svg>
+        <img src="/logo.png" alt="Fresh Cuts Meat Trading FZCO Logo" class="brand-logo-img" />
       </RouterLink>
 
       <!-- Desktop Navigation Menu -->
@@ -121,6 +111,13 @@ const isActive = (path) => {
 .logo {
   display: flex;
   align-items: center;
+}
+
+.brand-logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
 }
 
 .nav-menu {

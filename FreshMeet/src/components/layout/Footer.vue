@@ -13,13 +13,7 @@ const openQuoteModal = () => {
       
       <!-- Col 1: Brand Info -->
       <div class="footer-col">
-        <svg viewBox="0 0 250 50" width="200" height="40" class="footer-logo">
-          <circle cx="25" cy="25" r="22" fill="#cc2900" />
-          <path d="M15,15 L28,15 L28,26 L15,26 Z M28,22 L35,29" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" />
-          <circle cx="19" cy="19" r="1.5" fill="#ffffff" />
-          <text x="56" y="24" font-family="'Outfit', sans-serif" font-weight="900" font-size="20" letter-spacing="0.5" fill="#ffffff">FRESH CUTS</text>
-          <text x="56" y="38" font-family="'Outfit', sans-serif" font-weight="700" font-size="9" letter-spacing="1" fill="#cc2900">MEAT TRADING FZCO</text>
-        </svg>
+        <img src="/logo.png" alt="Fresh Cuts Meat Trading FZCO Logo" class="footer-logo-img" />
         <p class="footer-desc">
           Supplying premium quality fresh meat, chicken, beef and seafood across the UAE. We serve supermarkets, hotels, restaurants, and wholesale traders with strict cold chain compliance.
         </p>
@@ -121,6 +115,13 @@ const openQuoteModal = () => {
   width: 30px;
   height: 2px;
   background-color: var(--color-accent);
+}
+
+.footer-logo-img {
+  height: 44px;
+  width: auto;
+  margin-bottom: 16px;
+  object-fit: contain;
 }
 
 .footer-desc {
