@@ -102,9 +102,22 @@ const stats = [
 }
 
 @media (max-width: 576px) {
+  .stats-section {
+    padding: 24px 0;
+  }
   .stats-container {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .stat-item {
+    gap: 10px;
+    justify-content: flex-start;
+  }
+  .stat-num {
+    font-size: 24px;
+  }
+  .stat-label {
+    font-size: 11px;
   }
 }
 </style>

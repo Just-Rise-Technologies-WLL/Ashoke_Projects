@@ -29,4 +29,19 @@ All development activities, feature updates, and tasks performed in this reposit
     - Generated `favicon.png` (32x32) and `apple-touch-icon.png` (180x180) from official brand logo (`/logo.png`).
     - Created high-res 1200x630 `social-share.png` Open Graph preview card for WhatsApp, Facebook, LinkedIn, and Twitter sharing.
     - Updated `<head>` in `index.html` to reference `favicon.png`, `apple-touch-icon.png`, and `social-share.png` with complete OG/Twitter metadata (dimensions, secure URL, type).
+- **Task**: Fixed Website Preloader Loading Screen & Added UI Micro-Animations.
+  - **Details**:
+    - Replaced generic SVG placeholder circle in `App.vue` preloader with the official brand logo (`/logo.png`), dark glass container card, company subtitle (`FRESH CUTS MEAT TRADING FZCO`), and a glowing red gradient progress bar.
+    - Added global animation keyframes (`floatGentle`, `pulseGlow`, `buttonShimmer`) and utility tokens in `style.css`.
+    - Enhanced `AboutSection.vue` with interactive butcher photo frame floating animation, inner image zoom on hover, watermark glassmorphism breathing glow, side card elevation, checkmark list item scale transition, and button arrow translation on hover.
+- **Task**: Mobile Responsiveness Optimization across All Breakpoints.
+  - **Details**:
+    - Updated `HeroSection.vue` title font size to dynamic fluid CSS scaling `clamp(24px, 7.5vw, 52px)` so titles fit cleanly without horizontal overflow.
+    - Converted hero feature bar on mobile (< 640px) to a neat, compact 2x2 grid (`repeat(2, 1fr)`).
+    - Updated `StatsSection.vue` counter bar on mobile to a 2x2 grid (`repeat(2, 1fr)`).
+    - Adjusted `Navbar.vue` header height (`66px`) and logo height (`38px`) on mobile viewports.
+    - Updated `AboutSection.vue` section title to fluid scaling `clamp(22px, 6.5vw, 36px)` and photo frame height (`240px`) on mobile.
+    - Updated `.container` side padding to `16px` on mobile (< 576px) in `style.css`.
+
+
 

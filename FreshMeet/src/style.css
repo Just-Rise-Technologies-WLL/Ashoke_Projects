@@ -62,6 +62,13 @@ img {
   padding-right: 24px;
 }
 
+@media (max-width: 576px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 /* Button UI Elements */
 .btn {
   display: inline-flex;
@@ -148,8 +155,43 @@ img {
   }
 }
 
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(204, 41, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(204, 41, 0, 0.5);
+  }
+}
+
+@keyframes buttonShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 .animate-fade-in {
   animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
 }
 
 /* Form Styles */

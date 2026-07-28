@@ -238,4 +238,17 @@ const isActive = (path) => {
     display: block;
   }
 }
+
+@media (max-width: 576px) {
+  .navbar-inner {
+    height: 66px;
+  }
+  .brand-logo-img {
+    height: 38px;
+  }
+  .mobile-menu-drawer {
+    top: 66px;
+    padding: 16px;
+  }
+}
 </style>

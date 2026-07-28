@@ -294,9 +294,9 @@ onUnmounted(() => {
 }
 
 .hero-title {
-  font-size: 52px;
+  font-size: clamp(24px, 7.5vw, 52px);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.15;
   text-transform: uppercase;
   margin-bottom: 20px;
   letter-spacing: -0.5px;
@@ -563,11 +563,13 @@ onUnmounted(() => {
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 24px;
   }
   .hero-desc {
     margin-left: auto;
     margin-right: auto;
+    font-size: 14px;
   }
   .hero-actions {
     justify-content: center;
@@ -576,29 +578,77 @@ onUnmounted(() => {
     justify-content: center;
   }
   .image-frame-wrap {
-    height: 280px;
-    margin: 20px auto 0;
+    height: 260px;
+    margin: 10px auto 0;
   }
   .features-bar-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 16px;
   }
   .slider-arrow { display: none; }
 }
 
 @media (max-width: 576px) {
-  .hero-title {
-    font-size: 34px;
+  .hero-inner {
+    padding-top: 5px;
+    padding-bottom: 16px;
+  }
+  .tag-wrap {
+    margin-bottom: 10px;
+  }
+  .hero-tag {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+  .hero-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 20px;
   }
   .hero-actions {
     flex-direction: column;
+    gap: 10px;
   }
   .hero-btn {
     width: 100%;
     justify-content: center;
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+  .image-frame-wrap {
+    height: 220px;
+    margin-top: 10px;
+  }
+  .floating-badge {
+    bottom: -10px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+  .features-bar {
+    padding: 14px 0;
   }
   .features-bar-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .feature-item {
+    padding: 4px;
+    gap: 8px;
+  }
+  .feature-icon-box {
+    width: 36px;
+    height: 36px;
+  }
+  .feature-icon-box svg {
+    width: 18px;
+    height: 18px;
+  }
+  .feature-text h4 {
+    font-size: 11px;
+  }
+  .feature-text p {
+    font-size: 10px;
   }
 }
 </style>
