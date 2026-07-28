@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { Check, ArrowRight, Award, ShieldAlert } from 'lucide-vue-next'
+import { Check, ArrowRight, ShieldCheck, Award } from 'lucide-vue-next'
 
 const strengths = [
   'Strict quality control & hygiene',
@@ -16,13 +16,10 @@ const strengths = [
       
       <!-- Col 1: Text details -->
       <div class="about-info">
-        <span class="section-subtitle">About Our Company</span>
-        <h2 class="section-title text-left">Your Trusted Partner In <span>Meat Supply</span></h2>
+        <span class="section-subtitle">ABOUT OUR COMPANY</span>
+        <h2 class="section-title text-left">Your Trusted Partner In <span>Quality Meat Supply</span></h2>
         <p class="about-desc">
-          Fresh Cuts Meat Trading FZCO is a leading supplier of fresh, premium-grade meat and seafood across the United Arab Emirates. We are committed to maintaining the highest sanitation standards in the industry.
-        </p>
-        <p class="about-desc">
-          We operate a temperature-controlled cold chain network that ensures all meats retain their texture, freshness, and nutritive values from selection to delivery.
+          Fresh Cuts Meat Trading FZCO is a leading meat and seafood trading company in the UAE, committed to delivering premium quality products. We supply to supermarkets, restaurants, hotels, catering companies, and wholesalers across the region.
         </p>
         
         <ul class="strengths-list">
@@ -33,44 +30,45 @@ const strengths = [
         </ul>
         
         <RouterLink to="/about" class="btn btn-primary about-btn">
-          Read More About Us <ArrowRight size="16" />
+          READ MORE ABOUT US <ArrowRight size="16" />
         </RouterLink>
       </div>
       
-      <!-- Col 2: Center culinary graphic (Cleaver slicing cutting board SVG) -->
+      <!-- Col 2: Center Photo Frame (Butcher Prepping Fresh Meat) -->
       <div class="about-graphic">
-        <div class="illustration-box">
-          <svg viewBox="0 0 100 100" class="cutting-svg">
-            <rect x="15" y="60" width="70" height="15" rx="3" fill="#8d5b4c" />
-            <path d="M40,25 L65,15 L60,50 L40,55 Z" fill="#b0bec5" stroke="#37474f" stroke-width="2" />
-            <line x1="60" y1="50" x2="72" y2="60" stroke="#8d5b4c" stroke-width="4" stroke-linecap="round" />
-            <!-- Meat slices -->
-            <rect x="25" y="52" width="12" height="8" rx="2" fill="#d32f2f" />
-            <rect x="42" y="54" width="12" height="8" rx="2" fill="#d32f2f" />
-          </svg>
+        <div class="photo-frame-box">
+          <img 
+            src="/images/butcher_prep_raw_meat.png" 
+            alt="Fresh Cuts Butcher Prepping Quality Meat" 
+            class="butcher-img"
+          />
+          <div class="logo-watermark-overlay">
+            <span class="watermark-title">FRESH CUTS</span>
+            <span class="watermark-sub">MEAT TRADING FZCO</span>
+          </div>
         </div>
       </div>
       
-      <!-- Col 3: Stat Badges -->
+      <!-- Col 3: Stat & Safety Badges matching UI design.jpeg -->
       <div class="about-badges">
-        <div class="badge-card">
-          <div class="badge-icon-box">
-            <Award size="24" />
-          </div>
-          <div class="badge-info">
-            <h3>10+ Years</h3>
-            <p>Of Experience. Delivering Freshness Since 2014.</p>
+        <div class="badge-card white-card">
+          <div class="badge-header">
+            <h3 class="experience-num">10+</h3>
+            <div class="badge-text-group">
+              <span class="exp-title">YEARS OF EXPERIENCE</span>
+              <span class="exp-sub">Delivering Freshness Since 2014</span>
+            </div>
           </div>
         </div>
         
-        <div class="badge-card red-badge">
-          <div class="badge-icon-box">
-            <ShieldAlert size="24" />
+        <div class="badge-card red-card">
+          <div class="red-card-header">
+            <ShieldCheck size="24" class="safety-icon" />
+            <h3>COMMITTED TO QUALITY & SAFETY</h3>
           </div>
-          <div class="badge-info">
-            <h3>Safety First</h3>
-            <p>We follow international ISO and Halal standards to ensure the best quality.</p>
-          </div>
+          <p class="red-card-desc">
+            We follow international standards to ensure the best quality.
+          </p>
         </div>
       </div>
 
@@ -80,35 +78,49 @@ const strengths = [
 
 <style scoped>
 .about-section {
-  background-color: var(--color-light);
+  background-color: #ffffff;
   padding: 80px 0;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.2fr 1fr 0.9fr;
+  gap: 36px;
   align-items: center;
 }
 
-.text-left {
-  text-align: left;
+.section-subtitle {
+  color: #cc2900;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
 }
 
-.text-left::after {
-  margin: 12px 0 0;
+.section-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.25;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-title span {
+  color: #cc2900;
 }
 
 .about-desc {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--color-text-muted);
-  margin-top: 20px;
-  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+  margin-bottom: 24px;
 }
 
 .strengths-list {
-  margin: 24px 0 32px;
+  margin-bottom: 32px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -119,52 +131,93 @@ const strengths = [
   align-items: center;
   gap: 12px;
   font-weight: 700;
-  font-size: 14px;
-  color: var(--color-text-dark);
+  font-size: 13px;
+  color: #1e293b;
 }
 
 .chk-icon-box {
-  background-color: rgba(0, 71, 27, 0.08);
-  color: var(--color-primary);
-  width: 24px;
-  height: 24px;
+  background-color: #cc2900;
+  color: white;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .about-btn {
-  background-color: var(--color-primary);
+  background-color: #cc2900;
+  color: white;
+  padding: 14px 28px;
+  font-weight: 800;
+  font-size: 13px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(204, 41, 0, 0.3);
 }
 
 .about-btn:hover {
-  background-color: var(--color-primary-light);
-  box-shadow: 0 4px 12px rgba(0, 71, 27, 0.2);
+  background-color: #e62e00;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(204, 41, 0, 0.4);
 }
 
+/* Center Image Frame */
 .about-graphic {
   display: flex;
   justify-content: center;
 }
 
-.illustration-box {
-  width: 220px;
-  height: 220px;
-  background-color: var(--color-light-surface);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--color-border);
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.photo-frame-box {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.cutting-svg {
+.butcher-img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
+.logo-watermark-overlay {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(12, 13, 14, 0.75);
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.watermark-title {
+  display: block;
+  color: white;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.watermark-sub {
+  display: block;
+  color: #ff4d2d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Col 3 Badges matching UI design.jpeg */
 .about-badges {
   display: flex;
   flex-direction: column;
@@ -172,81 +225,86 @@ const strengths = [
 }
 
 .badge-card {
-  background-color: var(--color-light-surface);
-  border: 1px solid var(--color-border);
+  border-radius: 10px;
   padding: 24px;
-  border-radius: var(--border-radius-md);
-  display: flex;
-  gap: 16px;
-  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.badge-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-primary);
+.white-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
 }
 
-.badge-icon-box {
-  background-color: rgba(0, 71, 27, 0.08);
-  color: var(--color-primary);
-  width: 48px;
-  height: 48px;
-  border-radius: var(--border-radius-sm);
+.badge-header {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 16px;
+}
+
+.experience-num {
+  font-size: 42px;
+  font-weight: 900;
+  color: #cc2900;
+  line-height: 1;
+}
+
+.badge-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-title {
+  font-weight: 900;
+  font-size: 13px;
+  color: #0f172a;
+  letter-spacing: 0.5px;
+}
+
+.exp-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.red-card {
+  background-color: #cc2900;
+  color: white;
+}
+
+.red-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.safety-icon {
+  color: white;
   flex-shrink: 0;
 }
 
-.badge-info h3 {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--color-text-dark);
-  text-transform: uppercase;
-  margin-bottom: 4px;
+.red-card-header h3 {
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  margin: 0;
 }
 
-.badge-info p {
+.red-card-desc {
   font-size: 12px;
-  color: var(--color-text-muted);
-  line-height: 1.5;
-}
-
-.badge-card.red-badge {
-  background-color: rgba(204, 41, 0, 0.02);
-  border-color: rgba(204, 41, 0, 0.1);
-}
-
-.badge-card.red-badge:hover {
-  border-color: var(--color-accent);
-}
-
-.badge-card.red-badge .badge-icon-box {
-  background-color: rgba(204, 41, 0, 0.08);
-  color: var(--color-accent);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
 }
 
 @media (max-width: 992px) {
   .about-grid {
-    grid-template-columns: 1.2fr 0.8fr;
-  }
-  .about-badges {
-    grid-template-columns: 1fr 1fr;
-    grid-column: span 2;
-    flex-direction: row;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-grid {
     grid-template-columns: 1fr;
   }
   .about-graphic {
-    display: none;
-  }
-  .about-badges {
-    grid-template-columns: 1fr;
-    grid-column: span 1;
+    order: -1;
   }
 }
 </style>
+

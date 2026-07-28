@@ -42,9 +42,9 @@ const openQuoteModal = () => {
       <div class="footer-col">
         <h4 class="footer-heading">Get in Touch</h4>
         <ul class="footer-contact-list">
-          <li><strong>Office Phone:</strong> <a href="tel:+971501234567">+971 50 123 4567</a></li>
+          <li><strong>Office Phone:</strong> <a href="tel:+971555186448">+971 555 186 448</a> / <a href="tel:+971045840109">+971 (04) 584 0109</a></li>
           <li><strong>Email Address:</strong> <a href="mailto:info@freshcutsmeat.ae">info@freshcutsmeat.ae</a></li>
-          <li><strong>Corporate Address:</strong> Dubai Food Hub, Warehouse A-12, Dubai, United Arab Emirates</li>
+          <li><strong>Corporate Address:</strong> France cluster - S07, International City, Dubai, UAE</li>
         </ul>
       </div>
 

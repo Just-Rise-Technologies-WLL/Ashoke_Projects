@@ -1,7 +1,6 @@
 <script setup>
 import TopBar from '@/components/layout/Navbar.vue' // FreshMeet navbar acts as top headers
 import HeroSection from '@/components/sections/HeroSection.vue'
-import FeaturesSection from '@/components/sections/FeaturesSection.vue'
 import CategoriesSection from '@/components/sections/CategoriesSection.vue'
 import AboutSection from '@/components/sections/AboutSection.vue'
 import StatsSection from '@/components/sections/StatsSection.vue'
@@ -15,7 +14,6 @@ import Footer from '@/components/layout/Footer.vue'
     
     <main>
       <HeroSection />
-      <FeaturesSection />
       <CategoriesSection />
       <AboutSection />
       <StatsSection />

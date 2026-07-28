@@ -65,7 +65,7 @@ const handleSubmit = async () => {
             <Phone size="18" class="contact-icon" />
             <div class="card-info">
               <h3>Office Phone</h3>
-              <a href="tel:+971501234567">+971 50 123 4567</a>
+              <a href="tel:+971555186448">+971 555 186 448</a> / <a href="tel:+971045840109">+971 (04) 584 0109</a>
             </div>
           </li>
           
@@ -81,7 +81,7 @@ const handleSubmit = async () => {
             <MapPin size="18" class="contact-icon" />
             <div class="card-info">
               <h3>Corporate Office</h3>
-              <p>Dubai Food Hub, Warehouse A-12, Dubai, United Arab Emirates</p>
+              <p>France cluster - S07, International City, Dubai, UAE</p>
             </div>
           </li>
           
@@ -159,23 +159,6 @@ const handleSubmit = async () => {
         </form>
       </div>
 
-      <!-- Col 3: Wholesale Promotion Card -->
-      <div class="promo-col">
-        <div class="wholesale-card">
-          <h3 class="promo-title">Wholesale Solutions</h3>
-          <p class="promo-text">Specialized pricing and logistical support for supermarkets, restaurant chains, and bulk buyers across the UAE.</p>
-          
-          <!-- Stylized Ribeye Steak Vector (no image url) -->
-          <svg viewBox="0 0 100 100" class="promo-steak-svg">
-            <path d="M20,50 C20,35 45,30 65,35 C85,40 90,60 80,75 C70,90 45,85 30,80 C15,75 20,65 20,50 Z" fill="#cc2900" opacity="0.85" />
-            <path d="M35,48 Q45,45 55,48 M45,60 Q55,58 65,62 M32,58 Q38,62 44,59" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none" />
-            <circle cx="50" cy="50" r="10" stroke="#ffffff" stroke-width="4" stroke-dasharray="2 3" fill="none" />
-          </svg>
-          
-          <a href="#ws-name" class="btn btn-outline promo-btn">Contact Us <Send size="14" /></a>
-        </div>
-      </div>
-
     </div>
   </section>
 </template>
@@ -188,7 +171,7 @@ const handleSubmit = async () => {
 
 .wholesale-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 40px;
   align-items: start;
 }
